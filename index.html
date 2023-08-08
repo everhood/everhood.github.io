@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+<article class="post">
+{% include entry-header.html %}
+<div class="entry-content">
+{{ post.content }}
+</div>
+</article>
+{% endfor %}
+
+<nav class="paging-navigation">
+  <ul class="pages">
+    {% if paginator.previous_page %}
+    <li class="prev">
+      {% if paginator.previous_page == 1 %}
+      <a href="/">上一页</a>
+      {% else %}
+      <a href="/page{{ paginator.previous_page }}/">上一页</a>
+      {% endif %}
+    </li>
+    {% endif %}
+
+    <li class="page">
+      {% if paginator.page == 1 %}
+      <span class="cur">1</span>
+      {% else %}
+      <a href="/">1</a>
+      {% endif %}
+    </li>
+
+    {% for count in (2..paginator.total_pages) %}
+    <li class="page">
+      {% if count == paginator.page %}
+      <span class="cur">{{ count }}</span>
+      {% else %}
+      <a href="/page{{ count }}">{{ count }}</a>
+      {% endif %}
+    </li>
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <li class="next">
+      <a href="/page{{ paginator.next_page }}">下一页</a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+{% assign post = site.posts.first %}
+<article class="post">
+  {% include entry-header.html %}
+
+  <div class="entry-content">
+    {{ post.content }}
+  </div>
+
+  {% include related.html %}
+</article>
+
+{% include post-navigation.html %}

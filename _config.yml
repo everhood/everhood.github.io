@@ -1,0 +1,17 @@
+url: https://everhood.github.io
+host: everhood.github.io
+domain: everhood.github.io
+timezone: Asia/Shanghai
+encoding: utf-8
+permalink: '/:title'
+exclude: ["README.md"]
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: true
+paginate: 5
+
+title: 回园
+tagline: 观书唱令勤学道，久立疾行乐赏新。
+author:
+  name: 'everhood'

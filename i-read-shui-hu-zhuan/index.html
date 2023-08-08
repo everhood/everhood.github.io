@@ -1,0 +1,11 @@
+---
+layout: serial
+title: 比较读水浒
+---
+
+{% for post in site.categories.review reversed %}
+  {% if post.url contains "shui-hu-" %}
+  {{ post.content }}
+  {% endif %}
+{% endfor %}
+{% include comments.html %}

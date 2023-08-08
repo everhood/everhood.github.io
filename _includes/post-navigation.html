@@ -1,0 +1,8 @@
+<nav class="post-navigation">
+  {% if post.previous %}
+  <a rel="prev" title="上一篇：{{ post.previous.date | date: "%Y/%m/%d" }}" href="{{ post.previous.url }}">← {{ post.previous.title }}</a>
+  {% endif %}
+  {% if post.next %}
+  <a rel="next" title="下一篇：{{ post.next.date | date: "%Y/%m/%d" }}" href="{{ post.next.url }}">{{ post.next.title }} →</a>
+  {% endif %}
+</nav>

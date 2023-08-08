@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="author" content="{{ author.name }}">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏞️</text></svg>" />
+<link rel="alternate" type="application/atom+xml" title="Atom - {{ site.title }}" href="/feed/" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.css" />
+<link rel="stylesheet" type="text/css" href="/static/default.min.css" />
+</head>
+<body>
+<header class="site-header">
+  <a class="home-link" href="/">
+    <h1 class="site-title">{{ site.title }}</h1>
+  </a>
+  <h2 class="site-description">{{ site.tagline }}</h2>
+  <form class="search-box" action="//bing.com/search" method="get" accept-charset="utf-8" target="_blank">
+    <input type="search" name="q" placeholder="&#xf02e;" onclick="select()">
+    <input type="hidden" name="q1" value="site:{{ site.host }}">
+  </form>
+  <nav class="main-navigation">
+    <ul class="nav-menu">
+      <li class="page-item"><a href="/"><span class="octicon octicon-home"></span>首页</a></li>
+      <li class="page-item">
+        <a href="/all-posts/"><span class="octicon octicon-list-unordered"></span>文章</a>
+        <ul class="children">
+          <li class="page-item"><a href="/categories/"><span class="octicon octicon-list-unordered"></span>分类</a></li>
+          <li class="page-item"><a href="/i-read-shui-hu-zhuan/"><span class="octicon octicon-file-text"></span>比较读水浒</a></li>
+          <li class="page-item"><a href="/couplet/"><span class="octicon octicon-file-text"></span>说说对联</a></li>
+        </ul>
+      </li>
+      <li class="page-item feed-icon"><a title="订阅" href="/feed/"><span class="octicon mega-octicon octicon-rss"></span></a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="site-main">
+{{ content }}
+</div>
+
+<footer class="site-footer">
+  <p class="site-info">Powered by <a href="https://github.com/" title="Host">GitHub</a>, <a href="https://disqus.com/" title="Comment">Disqus</a>.</p>
+  <p class="copyright">本站内容欢迎自由转载，请勿注明作者及出处。</p>
+  </div>
+</footer>
+<script type="text/javascript" src="/static/default.min.js"></script>
+{% include analytics.html %}
+</body>
+</html>

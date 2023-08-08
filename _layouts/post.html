@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+{% assign post = page %}
+<article class="post">
+{% include entry-header.html %}
+
+<div class="entry-content">
+{{ content }}
+</div>
+
+{% include related.html %}
+</article>
+
+{% include post-navigation.html %}
+
+{% include comments.html %}
